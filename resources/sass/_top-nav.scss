@@ -1,0 +1,8 @@
+.top-nav-item {
+  @apply .text-grey-darker .text-xs .mr-4 .font-bold .pb-3 .border-b-2 .border-solid .border-transparent;
+
+  &:hover {
+    text-decoration: none;
+    @apply .text-yesayasoftware .border-yesayasoftware;
+  }
+}
