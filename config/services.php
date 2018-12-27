@@ -35,4 +35,8 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'simplecast' => [
+        'key' => env('SIMPLECAST_KEY')
+    ]
+
 ];
