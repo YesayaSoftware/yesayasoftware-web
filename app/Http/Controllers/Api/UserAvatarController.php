@@ -22,13 +22,13 @@ class UserAvatarController extends Controller
         if (App::environment('production')) {
             $thumbnail_path = null;
 
-            if (request()->hasFile('thumbnail')) {
+            if (request()->hasFile('avatar')) {
                 if (Storage::disk('s3')->exists(auth()->user()->thumbnail)) {
                     Storage::disk('s3')->delete(auth()->user()->thumbnail);
                 }
 
                 $thumbnail_path = Storage::disk('s3')
-                    ->putFile('public/avatar-thumbnails', request()->file('thumbnail'), 'public');
+                    ->putFile('public/avatar-thumbnails', request()->file('avatar'), 'public');
             }
 
             auth()->user()->update([

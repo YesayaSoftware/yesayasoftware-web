@@ -38,6 +38,7 @@ class PodcastController extends Controller
 
         return json_decode($response);
 
+        //For caching podcast
         /*return Cache::remember('podcast', 60 * 24 * 3, function() use ($endpoint) {
             $response = Zttp::get($endpoint, [
                 'api_key' => config('services.simplecast.key')
