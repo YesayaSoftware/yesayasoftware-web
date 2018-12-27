@@ -68214,7 +68214,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             data.append('avatar', avatar);
 
-            axios.post('/api/users/' + this.user.name + '/avatar', data).then(function () {
+            axios.post('/api/users/' + this.user.username + '/avatar', data).then(function () {
                 return flash('Avatar uploaded!');
             });
         }
