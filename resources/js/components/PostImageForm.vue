@@ -27,11 +27,11 @@
     		}
     	},
 
-    	/*computed() {
-    		canUpdate: {
+        computed: {
+    		canUpdate: function () {
                 return this.authorize(user => user.id === this.user.id);
     		}
-    	},*/
+    	},
 
     	methods: {
     		onLoad(thumbnail) {

@@ -80,7 +80,11 @@ class PostController extends Controller
      */
     public function create(PostTrending $trending)
     {
+        if (! auth()->user()->isAdmin())
+            return redirect()->route("posts");
+
         $categories = Category::orderBy('name')->get();
+
         $trending = $trending->get();
         $posts = Post::limit(6)->get();
 
