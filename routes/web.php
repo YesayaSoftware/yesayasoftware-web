@@ -17,7 +17,7 @@ Route::get('/botman/tinker', 'BotManController@tinker');
 
 Route::get('/', 'PostController@index');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'PostController@index')->name('home');
 
@@ -40,7 +40,7 @@ Route::get('categories/create', 'CategoryController@create')->name('create-categ
 Route::get('categories/{category}', 'CategoryController@show')->name('show-category');
 Route::post('categories', 'CategoryController@store')->name('store-category');
 
-Route::get('/profiles/{user}', 'ProfileController@show')->name('profile');
+Route::get('/profiles/{user}', 'ProfileController@show')->name('profile')->middleware('verified');
 
 Route::get('/profiles/{user}/notifications', 'UserNotificationsController@index');
 Route::delete('/profiles/{user}/notifications/{notification}', 'UserNotificationsController@destroy');
