@@ -508,7 +508,6 @@ module.exports = {
         'screen': '100vw',
         '376': '23.5rem',
         '448': '28rem',
-
     },
 
 
