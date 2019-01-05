@@ -15,7 +15,8 @@
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');
 Route::get('/botman/tinker', 'BotManController@tinker');
 
-Route::get('/', 'PostController@index');
+Route::get('/', 'PostController@index')->name('root');
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
 Auth::routes(['verify' => true]);
 

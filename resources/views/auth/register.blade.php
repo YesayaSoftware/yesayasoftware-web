@@ -1,6 +1,155 @@
-@extends('layouts.app')
+@extends('layouts.auth')
+
+@section('auth-link')
+    Already have an account?
+
+    <a href="{{ route('login') }}" class="font-normal text-blue-light">
+        Login
+        <i class="fa fa-arrow-right"></i>
+    </a>
+@endsection
 
 @section('content')
+    <div class="mt-10">
+        <h1 class="text-center text-white font-thin mb-4">
+            Create an account
+        </h1>
+
+        <p class="text-center text-grey-dark text-sm font-normal">
+            Start commenting and get notified for new updates
+        </p>
+    </div>
+
+    <div class="mt-5 flex justify-content-center">
+        <div class="w-1/3"></div>
+
+        <div class="w-2/5 bg-white shadow-md rounded p-10">
+            <form method="POST" action="{{ route('register') }}">
+                @csrf
+
+                <div class="mb-3">
+                    <div class="input-floating-icon-group">
+                        <i class="fa fa-user"></i>
+
+                        <input class="border text-grey-dark font-thin font-sm rounded w-full p-3{{ $errors->has('name') ? ' border border-red' : '' }}"
+                               name="name"
+                               type="text"
+                               placeholder="{{ __('Your name') }}"
+                               value="{{ old('name') }}"
+                               required
+                               autofocus>
+                    </div>
+
+                    @if ($errors->has('name'))
+                        <p class="text-red text-xs italic mt-2">
+                            {{ $errors->first('name') }}.
+                        </p>
+                    @endif
+                </div>
+
+                <div class="mb-3">
+                    <div class="input-floating-icon-group">
+                        <i class="fa fa-envelope"></i>
+
+                        <input class="border text-grey-dark font-thin font-sm rounded w-full p-3{{ $errors->has('email') ? ' border border-red' : '' }}"
+                               name="email"
+                               type="text"
+                               placeholder="{{ __('Email Address') }}"
+                               value="{{ old('email') }}"
+                               required>
+                    </div>
+
+                    @if ($errors->has('email'))
+                        <p class="text-red text-xs italic mt-2">
+                            {{ $errors->first('email') }}.
+                        </p>
+                    @endif
+                </div>
+
+                <div class="mb-6">
+                    <div class="input-floating-icon-group">
+                        <i class="fa fa-lock"></i>
+
+                        <input class="border rounded text-grey-dark font-thin font-sm rounded w-full p-3{{ $errors->has('password') ? ' border border-red' : '' }}"
+                               name="password"
+                               type="password"
+                               placeholder="Password (at least 8 chars)"
+                               required>
+                    </div>
+
+                    @if ($errors->has('password'))
+                        <p class="text-red text-xs italic mt-2">
+                            {{ $errors->first('password') }}.
+                        </p>
+                    @endif
+                </div>
+
+                <div class="mb-6">
+                    <div class="input-floating-icon-group">
+                        <i class="fa fa-lock"></i>
+
+                        <input class="border rounded text-grey-dark font-thin font-sm rounded w-full p-3{{ $errors->has('password_confirmation') ? ' border border-red' : '' }}"
+                               name="password_confirmation"
+                               type="password"
+                               placeholder="Password (at least 8 chars)"
+                               required>
+                    </div>
+
+                    @if ($errors->has('password_confirmation'))
+                        <p class="text-red text-xs italic mt-2">
+                            {{ $errors->first('password_confirmation') }}.
+                        </p>
+                    @endif
+                </div>
+
+                <div class="form-check form-check-policies mb-5">
+                    <label class="font-thin text-sm form-check-label" for="user_accepted_policies">
+                        <input name="accepted_policies"
+                               type="hidden"
+                               value="0">
+
+                        <input class="boolean required form-check-input"
+                               label="false"
+                               required="required"
+                               data-title="Please confirm"
+                               data-placement="left"
+                               data-trigger="manual"
+                               data-offset="0, 55"
+                               aria-required="true"
+                               type="checkbox"
+                               value="1"
+                               name="accepted_policies"
+                               id="user_accepted_policies">
+
+
+                        By creating an account you agree to the
+
+                        <a target="_blank"
+                           href="/policies/terms">Terms and Conditions
+                        </a>
+                        and
+
+                        <a target="_blank"
+                           href="/policies/privacy">
+                            Privacy policy
+                        </a>
+                    </label>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="button-colored rounded-full shadow w-1/2 p-4 text-sm text-white font-medium tracking-wider">
+                        {{ __('Register') }}
+
+                        <i class="fa fa-arrow-right w-5"></i>
+                    </button>
+                </div>
+            </form>
+
+        </div>
+
+        <div class="w-1/3"></div>
+    </div>
+{{--
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -73,5 +222,5 @@
             </div>
         </div>
     </div>
-</div>
+</div>--}}
 @endsection
