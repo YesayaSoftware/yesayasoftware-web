@@ -1,7 +1,27 @@
-@extends('layouts.app')
+@extends('layouts.auth')
+
+@section('auth-link')
+    Not yet registered?
+
+    <a href="{{ route('register') }}"
+       class="font-normal text-blue-light hover:text-blue-dark hover:no-underline">
+        Register Now
+        <i class="fa fa-arrow-right"></i>
+    </a>
+@endsection
 
 @section('content')
-<div class="container">
+    <div class="mt-20">
+        <h1 class="text-center text-white font-thin mb-4">
+            Login Now
+        </h1>
+
+        <p class="text-center text-grey-dark text-sm font-normal">
+            Start commenting and get notified for new updates
+        </p>
+    </div>
+
+    <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

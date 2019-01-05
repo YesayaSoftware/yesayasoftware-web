@@ -1,17 +1,15 @@
-@extends('layouts.auth')
-
-@section('auth-link')
+<?php $__env->startSection('auth-link'); ?>
     Not yet registered?
 
-    <a href="{{ route('register') }}"
+    <a href="<?php echo e(route('register')); ?>"
        class="font-normal text-blue-light hover:text-blue-dark hover:no-underline">
         Register Now
         <i class="fa fa-arrow-right"></i>
     </a>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('content')
-    <div class="mt-10">
+<?php $__env->startSection('content'); ?>
+    <div class="mt-20">
         <h1 class="text-center text-white font-thin mb-4">
             Recover your Account
         </h1>
@@ -26,32 +24,33 @@
         <div class="sm:appearance-none lg:w-1/3"></div>
 
         <div class="w-full lg:w-2/5 bg-white shadow-md rounded p-10">
-            <form method="POST" action="{{ route('password.email') }}">
-                @csrf
+            <form method="POST" action="<?php echo e(route('password.email')); ?>">
+                <?php echo csrf_field(); ?>
 
                 <div class="mb-3">
                     <div class="input-floating-icon-group">
                         <i class="fa fa-envelope"></i>
 
-                        <input class="border text-grey-dark font-thin font-sm rounded w-full p-3{{ $errors->has('email') ? ' border border-red' : '' }}"
+                        <input class="border text-grey-dark font-thin font-sm rounded w-full p-3<?php echo e($errors->has('email') ? ' border border-red' : ''); ?>"
                                name="email"
                                type="text"
-                               placeholder="{{ __('Email Address') }}"
-                               value="{{ old('email') }}"
+                               placeholder="<?php echo e(__('Email Address')); ?>"
+                               value="<?php echo e(old('email')); ?>"
                                required
                                autofocus>
                     </div>
 
-                    @if ($errors->has('email'))
+                    <?php if($errors->has('email')): ?>
                         <p class="text-red text-xs italic mt-2">
-                            {{ $errors->first('email') }}.
+                            <?php echo e($errors->first('email')); ?>.
                         </p>
-                    @endif
+                    <?php endif; ?>
                 </div>
 
                 <div class="text-center">
                     <button type="submit" class="button-colored rounded-full shadow p-4 text-sm text-white font-medium tracking-wider">
-                        {{ __('Send Password Reset Link') }}
+                        <?php echo e(__('Send Password Reset Link')); ?>
+
 
                         <i class="fa fa-arrow-right w-5"></i>
                     </button>
@@ -61,4 +60,9 @@
 
         <div class="sm:appearance-none lg:w-1/3"></div>
     </div>
-@endsection
+
+
+    
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.auth', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

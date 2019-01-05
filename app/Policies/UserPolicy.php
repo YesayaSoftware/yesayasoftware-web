@@ -20,4 +20,16 @@ class UserPolicy
     {
         return $signedInUser->id === $user->id;
     }
+
+    /**
+     * Determine whether the user can update the given profile.
+     *
+     * @param  \App\User $signedInUser
+     *
+     * @return boolean
+     */
+    public function admin(User $signedInUser)
+    {
+        return $signedInUser->isAdmin();
+    }
 }

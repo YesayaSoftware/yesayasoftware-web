@@ -18,4 +18,4 @@ mix.js('resources/js/app.js', 'public/js')
         processCssUrls: false,
         postCss: [tailwindcss('./tailwind.js')]
     })
-    .browserSync('yesayasoftware.test');
+    .browserSync('aay.test');

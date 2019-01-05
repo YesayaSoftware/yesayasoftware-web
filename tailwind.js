@@ -129,6 +129,7 @@ let colors = {
     'pink-lightest': '#ffebef',
 
     'yesayasoftware': '#446DC9',
+    'moon-grey': '#f5f5fa',
 }
 
 module.exports = {
@@ -502,6 +503,7 @@ module.exports = {
         '7/8': '87.5%',
         'full': '100%',
         'screen': '100vw',
+        '376': '23.5rem',
     },
 
 
@@ -533,6 +535,7 @@ module.exports = {
         '10': '2.5rem',
         '12': '3rem',
         '16': '4rem',
+        '18': '4.5rem',
         '20': '5rem',
         '24': '6rem',
         '32': '8rem',
@@ -937,7 +940,7 @@ module.exports = {
 
     plugins: [
         require('tailwindcss/plugins/container')({
-            // center: true,
+            center: true,
             // padding: '1rem',
         }),
     ],

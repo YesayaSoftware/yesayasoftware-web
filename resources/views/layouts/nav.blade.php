@@ -25,11 +25,7 @@
         <div class="w-full visibility-none lg:w-2/5 flex lg:justify-end">
             @if (Auth::guest())
                 <div>
-                    <a href="#"
-                       class="top-nav-item">
-                        Contacts
-                    </a>
-                    {{--<a href="{{ route('login') }}"
+                    <a href="{{ route('login') }}"
                        class="top-nav-item">
                         Login
                     </a>
@@ -37,7 +33,7 @@
                     <a href="{{ route('register') }}"
                        class="top-nav-item">
                         Register
-                    </a>--}}
+                    </a>
                 </div>
             @else
                 {{--<user-notifications></user-notifications>--}}

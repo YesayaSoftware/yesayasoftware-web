@@ -1,3 +1,9 @@
+//@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 textarea { resize: vertical; }
 
 img { max-width: 100%; }
@@ -12,6 +18,12 @@ button, [role=button] {
 a {
   text-decoration: none;
   @apply text-yesayasoftware;
+}
+
+.button-colored {
+  background: linear-gradient(135deg, #0266A3 0%, #1B9DFF 100%);
+  border: 0;
+  cursor: pointer;
 }
 
 a:hover {
@@ -39,5 +51,23 @@ a:hover {
 
   .pad-l {
     @apply .pl-3;
+  }
+}
+
+.input-floating-icon-group {
+  position: relative;
+
+  i {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: 15px;
+    pointer-events: none;
+    color: #182359;
+    font-weight: bold;
+    font-size: 19px;
+  }
+
+  input {
+    padding-left: 55px;
   }
 }

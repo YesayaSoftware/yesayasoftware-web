@@ -25,11 +25,15 @@
         <div class="w-full visibility-none lg:w-2/5 flex lg:justify-end">
             <?php if(Auth::guest()): ?>
                 <div>
-                    <a href="#"
+                    <a href="<?php echo e(route('login')); ?>"
                        class="top-nav-item">
-                        Contacts
+                        Login
                     </a>
-                    
+
+                    <a href="<?php echo e(route('register')); ?>"
+                       class="top-nav-item">
+                        Register
+                    </a>
                 </div>
             <?php else: ?>
                 
