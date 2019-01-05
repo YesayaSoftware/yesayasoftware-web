@@ -130,6 +130,9 @@ let colors = {
 
     'yesayasoftware': '#446DC9',
     'moon-grey': '#f5f5fa',
+    'telluric-blue-opacity-10': 'rgba(93,100,148,.1)',
+    'telluric-blue': '#5d6494',
+    'solstice-blue': '#3a416f',
 }
 
 module.exports = {
@@ -504,6 +507,7 @@ module.exports = {
         'full': '100%',
         'screen': '100vw',
         '376': '23.5rem',
+        '448': '28rem',
     },
 
 
@@ -614,6 +618,7 @@ module.exports = {
         '4xl': '90rem',
         '5xl': '100rem',
         'full': '100%',
+        '448': '28rem',
     },
 
 
@@ -690,6 +695,7 @@ module.exports = {
         'auto': 'auto',
         'px': '1px',
         '0': '0',
+        'two-px': '0.125rem',
         '1': '0.25rem',
         '2': '0.5rem',
         '3': '0.75rem',
