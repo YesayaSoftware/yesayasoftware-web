@@ -646,6 +646,11 @@ a:hover {
   background: url("/img/bg.jpg");
 }
 
+.bg-x-gradient-moon-grey-proton-grey-80 {
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(80%, #f5f5fa), to(#ebebf0));
+  background-image: linear-gradient(90deg, #f5f5fa 80%, #ebebf0);
+}
+
 /**
  * Injects Tailwinds components
  */
