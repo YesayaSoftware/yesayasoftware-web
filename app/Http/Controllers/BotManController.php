@@ -34,4 +34,15 @@ class BotManController extends Controller
     {
         $bot->startConversation(new ExampleConversation());
     }
+
+    public function listener(BotMan $bot)
+    {
+        $extras = $bot->getMessage()->getExtras();
+
+        $apiReply = $extras['apiReply'];
+
+        $bot->typesAndWaits(1);
+
+        $bot->reply(nl2br($apiReply));
+    }
 }

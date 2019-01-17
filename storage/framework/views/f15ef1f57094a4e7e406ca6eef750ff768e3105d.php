@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="<?php echo e(app()->getLocale()); ?>">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
     <title>BotMan Studio</title>
 
@@ -33,11 +33,11 @@
 
     <!-- Scripts -->
     <script>
-        window.App = {!! json_encode([
+        window.App = <?php echo json_encode([
                 'csrfToken' => csrf_token(),
                 'user' => Auth::user(),
                 'signedIn' => Auth::check()
-            ]) !!};
+            ]); ?>;
     </script>
 </head>
 <body>
