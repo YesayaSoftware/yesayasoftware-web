@@ -1,7 +1,7 @@
 <?php $__env->startSection('content'); ?>
     <div class="w-full visibility-none lg:w-1/4 pr-6 mt-8 mb-4">
         <div class="text-center">
-            <img src="<?php echo e($podcast_info->images->thumb); ?>"
+            <img src="<?php echo e(asset('svg/logo-rounded.svg')); ?>"
                  alt="Yesaya Software"
                  class="rounded-full h-48 w-48 mr-2">
         </div>

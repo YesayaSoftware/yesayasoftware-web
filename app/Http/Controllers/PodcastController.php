@@ -52,12 +52,18 @@ class PodcastController extends Controller
     {
         $endpoint = 'https://api.simplecast.com/v1/podcasts/8750.json';
 
-        return Cache::rememberForever('podcast-info', function() use ($endpoint) {
-            $response = Zttp::get($endpoint, [
-                'api_key' => config('services.simplecast.key')
-            ]);
+        $response = Zttp::get($endpoint, [
+            'api_key' => config('services.simplecast.key')
+        ]);
 
-            return json_decode($response);
-        });
+        return json_decode($response);
+        
+        // return Cache::rememberForever('podcast-info', function() use ($endpoint) {
+        //     $response = Zttp::get($endpoint, [
+        //         'api_key' => config('services.simplecast.key')
+        //     ]);
+
+        //     return json_decode($response);
+        // });
     }
 }
