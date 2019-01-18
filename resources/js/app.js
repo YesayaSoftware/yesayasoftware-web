@@ -29,5 +29,5 @@ Vue.component('wysiwyg', require('./components/Wysiwyg.vue'));
 Vue.component('post-view', require('./pages/Post.vue'));
 
 const app = new Vue({
-    el: '#yesayasoftware'
+    el: '#app'
 });

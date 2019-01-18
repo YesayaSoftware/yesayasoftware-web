@@ -29,4 +29,6 @@ class ActivityTest extends TestCase
 
         $this->assertEquals($activity->subject->id, $post->id);
     }
+
+    
 }

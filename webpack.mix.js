@@ -1,5 +1,5 @@
 let mix = require('laravel-mix');
-let tailwindcss = require('tailwindcss');
+let tailwindcss = require('laravel-mix-tailwind');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,11 +11,7 @@ let tailwindcss = require('tailwindcss');
  | file for the application as well as bundling up all the JS files.
  |
  */
-
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
-    .options({
-        processCssUrls: false,
-        postCss: [tailwindcss('./tailwind.js')]
-    })
-    .browserSync('aay.test');
+    .tailwind()
+    .browserSync('yesayasoftware.test');

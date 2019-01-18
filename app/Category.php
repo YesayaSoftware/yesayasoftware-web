@@ -17,6 +17,7 @@ class Category extends Model
         'description',
         'user_id'
     ];
+    
     /**
      * Get the route key name for Laravel.
      *
