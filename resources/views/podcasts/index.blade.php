@@ -3,7 +3,7 @@
 @section('content')
     <div class="w-full visibility-none lg:w-1/4 pr-6 mt-8 mb-4">
         <div class="text-center">
-            <img src="{{ $podcast_info->images->thumb }}"
+            <img src="{{ asset('svg/logo-rounded.svg') }}"
                  alt="Yesaya Software"
                  class="rounded-full h-48 w-48 mr-2">
         </div>
