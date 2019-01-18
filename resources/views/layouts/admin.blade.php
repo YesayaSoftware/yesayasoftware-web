@@ -29,7 +29,7 @@
     </head>
 
     <body>
-        <div id="yesayasoftware" class="flex flex-col min-h-screen text-base">
+        <div id="app" class="flex flex-col min-h-screen text-base">
             <header class="header sticky pin-t lg:z-40 z-20 w-full bg-moon-grey font-sans-alt">
                 <div class="relative flex">
                     <div class="header-logo flex-no-shrink w-376 py-6 px-10 lg:block hidden">

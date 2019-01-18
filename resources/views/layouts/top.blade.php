@@ -38,7 +38,7 @@
 </head>
 
 <body>
-<div id="yesayasoftware">
+<div id="app">
     @include ('layouts.nav')
 
     @guest
