@@ -41,8 +41,7 @@
                     </div>
 
                     <div class="flex items-center py-2 mb-4">
-                        <wysiwyg name="body"
-                            class="w-full mr-4"></wysiwyg>
+                        <wysiwyg name="body" class="w-full mr-4"></wysiwyg>
                     </div>
 
                     <div class="flex items-center py-2 mb-4">
