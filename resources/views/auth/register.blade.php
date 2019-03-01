@@ -122,17 +122,7 @@
                                id="user_accepted_policies">
 
 
-                        By creating an account you agree to the
-
-                        <a target="_blank"
-                           href="/policies/terms">Terms and Conditions
-                        </a>
-                        and
-
-                        <a target="_blank"
-                           href="/policies/privacy">
-                            Privacy policy
-                        </a>
+                        By creating an account you agree to receive notifications when you register your account for verification and when new content is published on Yesaya Software.
                     </label>
                 </div>
 

@@ -27,6 +27,7 @@ Vue.component('user-notifications', require('./components/UserNotifications.vue'
 Vue.component('wysiwyg', require('./components/Wysiwyg.vue').default);
 
 Vue.component('post-view', require('./pages/Post.vue').default);
+Vue.component('question-create', require('./pages/NewQuestion.vue').default);
 
 const app = new Vue({
     el: '#app'

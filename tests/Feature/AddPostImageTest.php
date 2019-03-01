@@ -13,7 +13,7 @@ class AddPostImageTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function only_members_can_add_post_image()
+    public function only_user_can_add_post_image()
     {
         $this->withExceptionHandling();
 
@@ -46,7 +46,7 @@ class AddPostImageTest extends TestCase
 
         $this->json('POST', route('post-image', $post), [
             'thumbnail' => $file = UploadedFile::fake()->image('avatar.jpg')
-        ])->assertStatus(204);;
+        ])->assertStatus(204);
 
         /*$this->assertEquals('post-images/' . $file->hashName(), $post->thumbnail);
 

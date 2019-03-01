@@ -51,6 +51,7 @@ class CommentController extends Controller
      * Update an existing reply.
      *
      * @param Comment $comment
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function update(Comment $comment)
     {
@@ -65,6 +66,7 @@ class CommentController extends Controller
      * @param  Comment $comment
      *
      * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function destroy(Comment $comment)
     {

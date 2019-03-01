@@ -13,10 +13,10 @@ class ProfileTest extends TestCase
     /** @test */
     function a_user_has_a_profile()
     {
-//        $user = create(User::class);
+        $user = create(User::class);
 
-//        $this->get(route('profile', $user->username))
-//            ->assertSee($user->name);
+        $this->get(route('profile', $user->username))
+            ->assertSee($user->name);
 
     }
 }

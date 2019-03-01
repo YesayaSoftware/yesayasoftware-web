@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
     <head>
-        @include ('partials._meta')
+        <?php echo $__env->make('partials._meta', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
         <title>
-            {{ config('app.name') }}
+            <?php echo e(config('app.name')); ?>
+
         </title>
 
         <!-- Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
@@ -16,16 +17,16 @@
 
         <!-- Scripts -->
         <script>
-            window.App = {!! json_encode([
+            window.App = <?php echo json_encode([
                 'csrfToken' => csrf_token(),
                 'user' => Auth::user(),
                 'signedIn' => Auth::check()
-            ]) !!};
+            ]); ?>;
         </script>
 
         <style> [v-cloak] { display: none; } </style>
 
-        @yield('head')
+        <?php echo $__env->yieldContent('head'); ?>
     </head>
 
     <body>
@@ -34,11 +35,11 @@
                 <div class="relative flex">
                     <div class="header-logo flex-no-shrink w-376 py-6 px-10 lg:block hidden">
                         <a href="/doc" class="flex items-center block h-6 hover:no-underline">
-                            <img src="{{ asset('svg/logo-rounded.svg') }}"
+                            <img src="<?php echo e(asset('svg/logo-rounded.svg')); ?>"
                                  class="h-12 w-12 mr-5"
-                                 alt="{{ config('app.name') }}">
+                                 alt="<?php echo e(config('app.name')); ?>">
 
-                            <span class="font-normal text-lg text-blue">{{ config('app.name') }}</span>
+                            <span class="font-normal text-lg text-blue"><?php echo e(config('app.name')); ?></span>
                         </a>
                     </div>
 
@@ -47,9 +48,9 @@
                             <div class="mx-6">
                                 <a href="/doc"
                                    class="block h-10 w-10 text-nebula-blue fill-current no-underline">
-                                    <img src="{{ asset('svg/logo-rounded.svg') }}"
+                                    <img src="<?php echo e(asset('svg/logo-rounded.svg')); ?>"
                                          class="h-full w-full"
-                                         alt="{{ config('app.name') }}">
+                                         alt="<?php echo e(config('app.name')); ?>">
                                 </a>
                             </div>
 
@@ -123,16 +124,16 @@
                 <div class="flex h-full">
                     <sidebar v-cloak></sidebar>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
+                    <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                        <?php echo csrf_field(); ?>
                     </form>
 
-                    @yield('content')
+                    <?php echo $__env->yieldContent('content'); ?>
                 </div>
             </div>
         </div>
 
         <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}"></script>
+        <script src="<?php echo e(asset('js/app.js')); ?>"></script>
     </body>
 </html>
